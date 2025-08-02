@@ -18,7 +18,7 @@ In this project, I focused on learning the basics of web development, including:
 
 ## Features
 
-- Responsive layout for mobile and desktop.
+- Responsive layout for desktop.
 - Clean and simple design.
 - Basic interactivity using JavaScript (e.g., buttons, forms).
 
