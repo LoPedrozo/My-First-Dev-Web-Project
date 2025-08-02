@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mais Vendidos e Parcerias</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" integrity="sha512-5A8nwdMOWrSz20fDsjczgUidUBR8liPYU+WymTZP1lmY9G6Oc7HlZv156XqnsgNUzTyMefFTcsFH/tnJE/+xBg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<style>
+    .container {
+            max-width: 1400px;
+            margin: 0 auto; 
+            padding: 0 5%;
+        }
+        
+    nav ul {
+        list-style-type: none; 
+        padding: 0; 
+        display: flex;
+    }
+    nav ul li {
+        margin-right: 15px;
+    }
+    nav ul li a {
+        text-decoration: none; 
+        color: black; 
+        padding: 10px 15px;
+        border: 2px solid black; 
+        border-radius: 5px;
+        transition: background-color 0.3s; 
+    }
+    nav ul li a:hover {
+        background-color: #f0f0f0;
+    }
+/* Estilo para Produtos Mais Vendidos (CSS Grid) */
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    padding: 20px;
+}
+.product-card {
+    text-align: center;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 10px;
+}
+.product-card img {
+    max-width: 100%;
+    border-radius: 5px;
+}
+
+/* Estilo para Parcerias (Flexbox) */
+.flex-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 20px;
+}
+.partner {
+    text-align: center;
+    max-width: 120px;
+}
+.partner img {
+    width: 100%;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+.partner p {
+    font-size: 1.1em;
+    font-weight: bold;
+}
+
+
+
+/* Estilo para a Tabela */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+}
+th, td {
+    border: 1px solid #ddd;
+    text-align: center;
+    padding: 10px;
+}
+th {
+    background-color: #000000;
+    color: white;
+}
+h2{
+    justify-content: center;
+    display: flex;
+    margin:auto;
+}
+/* Estilo da Tabela Criativa */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    text-align: left;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    overflow: hidden;
+}
+thead {
+    background-color: #4CAF50;
+    color: white;
+}
+th, td {
+    padding: 12px 15px;
+    vertical-align: middle;
+}
+tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+tr:nth-child(odd) {
+    background-color: #ffffff;
+}
+td {
+    text-align: center;
+}
+th {
+    text-align: center;
+    font-size: 18px;
+}
+tbody tr:hover {
+    background-color: #f1f1f1;
+    cursor: pointer;
+}
+
+/* Estilo para as Imagens da tabela */
+td img {
+    width: 80px;
+    height: auto;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Ícones de Avaliação */
+td:nth-child(5) {
+    text-align: center;
+    font-size: 18px;
+    color: #7a6c19db; /* Cor dourada para estrelas */
+}
+
+
+</style>
+<body>
+    <script>
+        // Criar o botão dinamicamente
+        const botaoTopo = document.createElement("button");
+        botaoTopo.textContent = "↑ Topo";
+        botaoTopo.style.position = "fixed";
+        botaoTopo.style.bottom = "20px";
+        botaoTopo.style.right = "20px";
+        botaoTopo.style.padding = "10px 15px";
+        botaoTopo.style.fontSize = "16px";
+        botaoTopo.style.display = "none";
+        botaoTopo.style.backgroundColor = "#000";
+        botaoTopo.style.color = "#fff";
+        botaoTopo.style.border = "none";
+        botaoTopo.style.borderRadius = "5px";
+        botaoTopo.style.cursor = "pointer";
+        document.body.appendChild(botaoTopo);
+    
+        // Mostrar o botão ao rolar para baixo
+        window.addEventListener("scroll", () => {
+            botaoTopo.style.display = window.scrollY > 200 ? "block" : "none";
+        });
+    
+        // Scroll para o topo
+        botaoTopo.addEventListener("click", () => {
+            window.scrollTo({ top: 0, behavior: "smooth" });
+        });
+    </script>
+    <header>
+        <div class="container">
+    
+            <nav>
+                <a href="#">
+                    <img src="IMG/Logo" alt="descrição da imagem">
+                </a>
+                <ul class="ul">
+                    <li><a href="index.html" style="color: black;">HOME</a></li>
+                    <li><a href="catalogo.html" style="color: black;">CATÁLOGO</a></li>
+                    <li><a href="quemsomos.html" style="color: black;">SOBRE NÓS</a></li>
+                    <li><a href="feedback.html" style="color: black;">FEEDBACK</a></li>
+                    <li><a href="maisvendidos.html" style="color: black;">DESTAQUES DA TEMPORADA</a></li>
+                </ul>
+                
+            </nav>
+        </div>
+    </header>
+    <main>
+        <!-- Produtos Mais Vendidos -->
+        <section class="grid-section">
+            <h2>Produtos Mais Vendidos</h2>
+            <div class="grid-container">
+                <div class="product-card">
+                    <img src="IMG/chuteiranike.webp" alt="Produto 1">
+                    <h4>NIKE MERCURIALl</h4>
+                    <p>R$ 400,00</p>
+                </div>
+                <div class="product-card">
+                    <img src="IMG/UMM.jpg" alt="Produto 2">
+                    <h4>UMBRO SOUL KNIT</h4>
+                    <p>R$ 450,00</p>
+                </div>
+                <div class="product-card">
+                    <img src="IMG/cpum.jpg" alt="Produto 3">
+                    <h4>PUMA FUTURE</h4>
+                    <p>R$ 650,00</p>
+                </div>
+                <div class="product-card">
+                    <img src="IMG/nb.jpg" alt="Produto 4">
+                    <h4>NEW BALANCE TEKELA</h4>
+                    <p>R$ 570,00</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Parcerias -->
+        <section class="flex-section">
+            <h2>Nossas Parcerias</h2>
+            <div class="flex-container">
+                <div class="partner">
+                    <img src="IMG/nike2.png" alt="nike logo" >
+                    <p>NIKE</p>
+                </div>
+                <div class="partner">
+                    <img src="IMG/Adidas-Logo.png" alt="Parceiro 2" style=display:flexbox;>
+                    <p>ADIDAS</p>
+                </div>
+                <div class="partner">
+                    <img src="IMG/puma.png" alt="Parceiro 3">
+                    <p>PUMA</p>
+                </div>
+                <div class="partner">
+                    <img src="IMG/new.png" alt="Parceiro 3">
+                    <p>NEW BALANCE</p>
+                </div>
+                <div class="partner">
+                    <img src="IMG/umbro.png" alt="Parceiro 3">
+                    <p>UMBRO</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Tabela de Detalhes dos Produtos -->
+        
+<section class="table-section">
+    <h2>Produtos Mais Vendidos e Feedback</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Imagem</th>
+                <th>Produto</th>
+                <th>Quantidade Vendida</th>
+                <th>Avaliação</th>
+                <th>Feedback dos Clientes</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><img src="IMG/chuteiranike.webp" alt="nikechuteira"></td>
+                <td>NIKE MERCURIALl</td>
+                <td>200</td>
+                <td>★★★★★</td>
+                <td>Excelente qualidade e design.</td>
+            </tr>
+            <tr>
+                <td><img src="IMG/UMM.jpg" alt="umm"></td>
+                <td>UMBRO SOUL KNIT</td>
+                <td>180</td>
+                <td>★★★★☆</td>
+                <td>Ótima durabilidade, mas um pouco cara.</td>
+            </tr>
+            <tr>
+                <td><img src="IMG/cpum.jpg" alt="Chuteira X"></td>
+                <td>PUMA FUTURE</td>
+                <td>150</td>
+                <td>★★★★★</td>
+                <td>Confortável e perfeita para jogos intensos.</td>
+            </tr>
+            <tr>
+                <td><img src="IMG/nb.jpg" alt="NB"></td>
+                <td>NEW BALANCE TEKELA</td>
+                <td>120</td>
+                <td>★★★★☆</td>
+                <td>Bom custo-benefício, mas poucas opções de cores.</td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+
+<footer class="final">
+    <div class="container">
+        <div class="links">
+            <a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+            <a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+            <a href="#"><i class="fa fa-snapchat" aria-hidden="true"></i></a>
+            <a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+        </div>
+        <p>Desenvolvido por ABL</p>
+    </div>
+</footer>
+<script src="script.js"></script>
+</html>

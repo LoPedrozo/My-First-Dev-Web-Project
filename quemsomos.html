@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mundo do Futebol</title>
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" integrity="sha512-5A8nwdMOWrSz20fDsjczgUidUBR8liPYU+WymTZP1lmY9G6Oc7HlZv156XqnsgNUzTyMefFTcsFH/tnJE/+xBg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+     <link rel="stylesheet" href="style.css" type="text/css"> 
+    <style>
+        .container{
+        max-width: 1400px;
+        margin:0 auto; 
+        padding: 0 5%;
+        }
+    </style>
+</head>
+<body>
+    <style>
+        
+        nav ul {
+            list-style-type: none; 
+            padding: 0; 
+            display: flex;
+        }
+        nav ul li {
+            margin-right: 15px;
+        }
+        nav ul li a {
+            text-decoration: none; 
+            color: black; 
+            padding: 10px 15px;
+            border: 2px solid black; 
+            border-radius: 5px;
+            transition: background-color 0.3s; 
+        }
+        nav ul li a:hover {
+            background-color: #f0f0f0;
+        }
+        
+    </style>
+    <main>
+        <header>
+        <div class="container">
+    
+            <nav>
+                <a href="#">
+                    <img src="IMG/Logo" alt="descrição da imagem">
+                </a>
+                <ul class="ul">
+                    <li><a href="index.html" style="color: black;">HOME</a></li>
+                    <li><a href="catalogo.html" style="color: black;">CATÁLOGO</a></li>
+                    <li><a href="quemsomos.html" style="color: black;">SOBRE NÓS</a></li>
+                    <li><a href="feedback.html" style="color: black;">FEEDBACK</a></li>
+                    <li><a href="maisvendidos.html" style="color: black;">DESTAQUES DA TEMPORADA</a></li>
+                </ul>
+                
+            </nav>
+        </div>
+        </header>
+        <section class="pratica_mais">
+            <div class="container">
+                <div class="pratica_mais-text">
+                    <h3>Mundo De Futebol</h3>
+                    <p>
+
+                        "Somos uma equipe apaixonada por futebol e dedicada a oferecer produtos de qualidade para todos os amantes do esporte. Nosso objetivo é proporcionar uma experiência completa para os nossos clientes, com uma seleção cuidadosa de itens que vão desde acessórios até roupas e equipamentos. Cada produto é escolhido com o máximo cuidado, buscando atender tanto aos fãs casuais quanto aos jogadores mais exigentes. Nossa equipe é formada por pessoas que entendem e respiram futebol, e estamos aqui para trazer o melhor para você, nosso cliente!" </p>
+                    <a href="feedback.html" class="btn">FeedBack</a>
+                </div>
+                <div class="pratica_mais-img">
+                    <img src="IMG/loja.jpg">
+                </div>
+            </div>
+        </section>
+        <style> 
+
+
+
+        </style>
+
+        <article class="depoimentos">
+            <div class="container">
+                <h3>Nossa Equipe</h3>
+                
+                <div class="cards">
+                    <div class="cards-itens">
+                        <img src="IMG/aslam.jpg" alt="descrição da imagem">
+                        <p class="nome-user">Aslam Rekik</p>
+                        <p class="depoimento-user">
+                            Nosso responsável pelo marketing é um verdadeiro apaixonado pelo futebol e pela conexão com nossos torcedores. Ele traz consigo uma vasta experiência em campanhas digitais, redes sociais e estratégias de engajamento. Trabalha com dedicação para construir a imagem da nossa marca, promovendo uma comunicação transparente e criativa. Seu objetivo é fortalecer a presença da empresa no mercado, garantindo que nossa paixão pelo futebol chegue até os fãs e nossos produtos estejam sempre em destaque.
+                        </p>
+                        
+                    </div>
+
+                    <div class="cards-itens">
+                        <img src="IMG/lolo.jpg" alt="descrição da imagem">
+                        <p class="nome-user">Lorenzo Pedrozo</p>
+                        <p class="depoimento-user">
+                            À frente das vendas, temos um profissional que entende como ninguém as necessidades dos nossos clientes e o potencial do nosso catálogo. Com uma visão estratégica e um atendimento diferenciado, ele lidera a equipe para entregar soluções que superam as expectativas do mercado. Sua missão é expandir nossa presença, conquistar novos parceiros e garantir que cada cliente sinta o verdadeiro espírito do futebol em cada compra realizada.
+                        </p>
+                        
+                    </div>
+                   
+                    <div class="cards-itens">
+                        <img src="IMG/bruno.jpg" alt="descrição da imagem">
+                        <p class="nome-user">Bruno Rodrigo</p>
+                        <p class="depoimento-user">
+                            Nosso responsável pela distribuição é o ponto-chave para que nossos produtos cheguem de forma rápida e segura a cada cliente. Ele cuida de toda a logística com extrema atenção aos detalhes, garantindo que cada etapa do processo seja executada com eficiência e agilidade. Com um planejamento minucioso e uma operação organizada, ele assegura que nossa rede de distribuição funcione como um verdadeiro time, entregando qualidade e pontualidade em cada pedido.
+                        </p>
+                       
+                    </div>
+                   
+                </div>
+            </div>
+        </article>
+
+
+<footer class="final">
+    <div class="container">
+        <div class="links">
+            <a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+            <a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+            <a href="#"><i class="fa fa-snapchat" aria-hidden="true"></i></a>
+            <a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+        </div>
+        <p>Desenvolvido por ABL</p>
+    </div>
+</footer>
+    </main>
+    <script>
+        // Criar o botão dinamicamente
+        const botaoTopo = document.createElement("button");
+        botaoTopo.textContent = "↑ Topo";
+        botaoTopo.style.position = "fixed";
+        botaoTopo.style.bottom = "20px";
+        botaoTopo.style.right = "20px";
+        botaoTopo.style.padding = "10px 15px";
+        botaoTopo.style.fontSize = "16px";
+        botaoTopo.style.display = "none";
+        botaoTopo.style.backgroundColor = "#000";
+        botaoTopo.style.color = "#fff";
+        botaoTopo.style.border = "none";
+        botaoTopo.style.borderRadius = "5px";
+        botaoTopo.style.cursor = "pointer";
+        document.body.appendChild(botaoTopo);
+    
+        // Mostrar o botão ao rolar para baixo
+        window.addEventListener("scroll", () => {
+            botaoTopo.style.display = window.scrollY > 200 ? "block" : "none";
+        });
+    
+        // Scroll para o topo
+        botaoTopo.addEventListener("click", () => {
+            window.scrollTo({ top: 0, behavior: "smooth" });
+        });
+    </script>
+    
+</body>
+</html>

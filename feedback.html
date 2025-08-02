@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mundo do Futebol</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" integrity="sha512-5A8nwdMOWrSz20fDsjczgUidUBR8liPYU+WymTZP1lmY9G6Oc7HlZv156XqnsgNUzTyMefFTcsFH/tnJE/+xBg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="style.css" type="text/css"> 
+
+    <style>
+        /* Estilos existentes */
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 5%;
+        }
+        nav ul {
+            list-style-type: none; 
+            padding: 0; 
+            display: flex;
+        }
+        nav ul li {
+            margin-right: 15px;
+        }
+        nav ul li a {
+            text-decoration: none; 
+            color: black; 
+            padding: 10px 15px;
+            border: 2px solid black; 
+            border-radius: 5px;
+            transition: background-color 0.3s; 
+        }
+        nav ul li a:hover {
+            background-color: #f0f0f0;
+        }
+        header {
+            background-color: #ffffff;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #ffffff;
+            color: #000000;
+            display: flex;
+            justify-content: center;
+            padding: 20px;
+        }
+        h1 {
+            text-align: center;
+            color: #000000;
+        }
+        label {
+            font-weight: bold;
+            margin-top: 10px;
+            display: block;
+            color: #080808;
+        }
+        input, select, textarea, button {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            border: 1px solid #313131;
+            border-radius: 5px;
+            font-size: 16px;
+            background-color: #ffffff;
+            color: #060606;
+        }
+        input::placeholder, textarea::placeholder {
+            color: #777777;
+        }
+        .btn {
+            display: flex;
+            justify-content: center;
+        }
+        .reset-btn {
+            display: none;
+            margin-top: 15px;
+            padding: 10px;
+            background-color: #d9534f;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .welcome-message {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background-color: #4CAF50;
+            color: white;
+            padding: 15px;
+            text-align: center;
+            z-index: 1000;
+        }
+        .avaliacao-ruim {
+            background-color: #f44336; /* Vermelho */
+            color: white;
+        }
+        .avaliacao-regular {
+            background-color: #ff9800; /* Laranja */
+            color: white;
+        }
+        .avaliacao-boa {
+            background-color: #4CAF50; /* Verde */
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <header>
+            <div class="container">
+                <nav>
+                    <a href="#">
+                        <img src="IMG/Logo" alt="descrição da imagem">
+                    </a>
+                    <ul class="ul">
+                        <li><a href="index.html" style="color: black;">HOME</a></li>
+                        <li><a href="catalogo.html" style="color: black;">CATÁLOGO</a></li>
+                        <li><a href="quemsomos.html" style="color: black;">SOBRE NÓS</a></li>
+                        <li><a href="feedback.html" style="color: black;">FEEDBACK</a></li>
+                        <li><a href="maisvendidos.html" style="color: black;">DESTAQUES DA TEMPORADA</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+
+        <section>
+            <div class="container">
+                <h1>Feedback do Produto</h1>
+                <p>A sua opinião é muito importante para nós! Por favor, preencha o formulário abaixo para nos ajudar a melhorar nossos produtos.</p>
+                
+                <form id="feedback-form">
+                    <label for="nome">Nome</label>
+                    <input type="text" id="nome" name="nome" placeholder="Seu nome">
+
+                    <label for="email">E-mail</label>
+                    <input type="email" id="email" name="email" placeholder="Seu e-mail">
+
+                    <label for="produto">Produto Avaliado</label>
+                    <input type="text" id="produto" name="produto" placeholder="Nome do produto">
+
+                    <label for="avaliacao">Avaliação</label>
+                    <select id="avaliacao" name="avaliacao">
+                        <option value="5">5 - Excelente</option>
+                        <option value="4">4 - Muito bom</option>
+                        <option value="3">3 - Bom</option>
+                        <option value="2">2 - Regular</option>
+                        <option value="1">1 - Ruim</option>
+                    </select>
+
+                    <label for="comentario">Comentário</label>
+                    <textarea id="comentario" name="comentario" rows="4" placeholder="Deixe seu comentário sobre o produto..."></textarea>
+
+                    <button type="submit" class="btn">Enviar Feedback</button>
+                    <button type="button" class="reset-btn" id="reset-btn">Limpar Formulário</button>
+                </form>
+            </div>
+        </section>
+
+        <footer class="final">
+            <div class="container">
+                <div class="links">
+                    <a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+                    <a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+                    <a href="#"><i class="fa fa-snapchat" aria-hidden="true"></i></a>
+                    <a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+                </div>
+                <p>Desenvolvido por ABL</p>
+            </div>
+        </footer>
+    </main>
+
+    <script>
+        // Exibir mensagem de boas-vindas
+        window.addEventListener('load', function() {
+            const welcomeMessage = document.createElement('div');
+            welcomeMessage.textContent = "Bem-vindo ao nosso site! Aproveite sua visita.";
+            welcomeMessage.className = "welcome-message";
+            document.body.prepend(welcomeMessage);
+
+            setTimeout(() => {
+                welcomeMessage.remove();
+            }, 5000);
+        });
+
+        // Contador de caracteres no campo de comentário
+        const comentarioInput = document.getElementById('comentario');
+        const contador = document.createElement('small');
+        contador.style.display = 'block';
+        contador.style.marginTop = '5px';
+        comentarioInput.parentNode.insertBefore(contador, comentarioInput.nextSibling);
+
+        comentarioInput.addEventListener('input', function() {
+            const maxChars = 200;
+            const charsLeft = maxChars - comentarioInput.value.length;
+            contador.textContent = `Caracteres restantes: ${charsLeft}`;
+
+            if (charsLeft <= 20) {
+                contador.style.color = 'red';
+            } else {
+                contador.style.color = 'black';
+            }
+        });
+
+        // Exibir mensagem personalizada ao preencher o nome
+        const nomeInput = document.getElementById('nome');
+        const mensagem = document.createElement('p');
+        mensagem.style.marginTop = "10px";
+        mensagem.style.color = "#008000";
+        mensagem.style.fontSize = "16px";
+        nomeInput.parentNode.appendChild(mensagem);
+
+        nomeInput.addEventListener('input', () => {
+            if (nomeInput.value.trim()) {
+                mensagem.textContent = `Olá, ${nomeInput.value.trim()}! Obrigado por nos dar seu feedback.`;
+            } else {
+                mensagem.textContent = '';
+            }
+        });
+
+        // Mudar cor da avaliação
+        const avaliacaoSelect = document.getElementById('avaliacao');
+        avaliacaoSelect.addEventListener('change', function() {
+            const avaliacao = parseInt(avaliacaoSelect.value);
+            if (avaliacao <= 2) {
+                avaliacaoSelect.classList.add('avaliacao-ruim');
+                avaliacaoSelect.classList.remove('avaliacao-regular', 'avaliacao-boa');
+            } else if (avaliacao === 3) {
+                avaliacaoSelect.classList.add('avaliacao-regular');
+                avaliacaoSelect.classList.remove('avaliacao-ruim', 'avaliacao-boa');
+            } else {
+                avaliacaoSelect.classList.add('avaliacao-boa');
+                avaliacaoSelect.classList.remove('avaliacao-ruim', 'avaliacao-regular');
+            }
+        });
+
+        // Validação e envio do formulário
+        document.getElementById('feedback-form').addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            const nome = document.getElementById('nome').value.trim();
+            const email = document.getElementById('email').value.trim();
+            const produto = document.getElementById('produto').value.trim();
+            const comentario = document.getElementById('comentario').value.trim();
+            let erroMensagem = '';
+
+            if (!nome || !email || !produto || !comentario) {
+                erroMensagem = 'Todos os campos são obrigatórios.';
+                alert(erroMensagem);
+                return;
+            }
+
+            alert('Feedback enviado com sucesso! Obrigado pela sua colaboração.');
+            document.getElementById('feedback-form').reset();
+            document.querySelector('.reset-btn').style.display = 'none';
+        });
+
+        // Botão de reset do formulário
+        const botaoReset = document.getElementById('reset-btn');
+        document.getElementById('feedback-form').addEventListener('input', () => {
+            const camposPreenchidos = Array.from(document.getElementById('feedback-form').elements).some(campo => campo.value.trim());
+            botaoReset.style.display = camposPreenchidos ? "block" : "none";
+        });
+
+        botaoReset.addEventListener('click', (event) => {
+            event.preventDefault();
+            document.getElementById('feedback-form').reset();
+            botaoReset.style.display = "none";
+        });
+    </script>
+</body>
+</html>
