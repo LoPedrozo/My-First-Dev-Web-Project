@@ -1,0 +1,235 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+    text-decoration: none;
+    outline: none;
+}
+.box_info {
+    width: 300px;
+    height: 300px;
+    border: 1px solid;
+    background-color: slateblue;
+    float: left;
+    margin: 14px;
+    border-radius: 10px;
+    color: white;
+}
+
+
+
+
+body{
+    background-color:#ffffff;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+main{
+    border: solid 3px black;
+    width: 100%;
+}
+h3{
+    font-size: 50px;
+}
+p{
+    color: #0000009c;
+}
+
+li{
+    list-style: none;
+}
+
+section, footer{
+    padding: 54px 0; 
+}
+
+header{
+    background-position: center; 
+    background-attachment: fixed;
+}
+
+
+nav{
+    display: flex;
+    align-items: center; 
+    justify-content: space-between;
+    padding-top: 30px;
+}
+nav ul{
+    display: flex;
+    align-items: center;
+}
+nav ul a{
+    color: green; 
+    margin: 0 25px;
+    text-transform: uppercase;
+    font-size: 14px; 
+    display: block;
+
+}
+
+
+nav ul a::after{
+    content: "";
+    background-color: black;
+    height: 5px;
+    width: 0%;
+    display: block;
+
+
+}
+nav ul a:hover:not(.btn)::after{ 
+    width: 100%;
+    transition: 0.2s;
+    margin: 0 auto;
+
+}
+img {
+    width: auto;
+    height: auto;
+}
+.lan {
+
+    justify-content: center;
+   display: flex; 
+}
+
+
+
+
+.btn{
+    background-color: BLACK;
+    color: #ffffff;
+    padding: 15px 20px;
+    border-radius: 10px;
+    cursor:pointer;
+    display: inline-block;
+    transition: 0.5s;
+}
+.btn:hover {
+    background-color: #3580db;
+  }
+
+
+.btn.animate-btn{
+    animation: animate-outline 1s ease-out infinite;  
+  }
+  .btn:hover {
+    background-color: #3580db;
+  }
+  
+  @keyframes animate-outline {
+      from{
+          outline: 0px solid #4f9bf98a;
+      }
+      to{
+          outline: 15px solid #4f9bf900;
+      }
+  }
+
+.banner{
+    display: flex;
+    justify-content: center;
+}
+.banner_text{
+    margin:50px;
+    text-align: center;
+    padding: 0 90px;
+
+}
+.banner .banner_text h1{
+    font-size: 60px;
+    color: #ffffff;
+}
+.banner .banner_text p{
+    font-size: 20px;
+    color: #ffffff;
+    font-weight:lighter;
+    margin: 18px 0;
+  }
+
+  
+.pratica_mais .container{
+    display: flex;
+    align-items: center;
+}
+.pratica_mais .pratica_mais-text{
+    width: 50%;
+    padding: 0 40px;
+
+}
+.pratica_mais .pratica_mais-img{
+    width: 50%; 
+}
+.pratica_mais-text p{
+    margin: 20px 0;
+}
+.pratica_mais .pratica_mais-img img{
+    width: 100%;
+}
+
+
+
+.depoimentos h3{
+    text-align: center;
+}
+.depoimentos p{
+    text-align: center;
+    margin-bottom: 20px;
+}
+.cards{
+    display: flex;
+    justify-content: center;
+}
+.depoimentos .cards-itens{
+    background-color: black;
+    margin: 15px;
+    border-radius: 15px;
+    text-align: center;
+    width: 350px;
+}
+
+.depoimentos .cards-itens img{
+    border-radius: 100%;
+    width: 150px;
+    display: block;
+    margin: 20px auto;
+}
+.depoimentos .cards-itens .nome-user{
+    font-weight: 600;
+    font-size: 20px;
+    margin-bottom: 15px;
+    color: white;
+   }
+   .depoimentos .cards-itens .depoimento-user{
+    font-size: 15px;
+padding: 0 15px;
+color: white;
+   }
+
+  .clientes h3,
+  .clientes p{
+      text-align: center;
+
+     }
+.clientes.container div{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+.final{
+    background-color: black;
+    text-align: center;
+   }
+   .final i{
+    color: black;
+    background-color: #ffffff;
+    font-size: 30px;
+    padding: 10px;
+    margin: 3px;
+    border-radius: 10px;
+   }
+   .final p{
+    margin-top: 10px;
+    color: #ffffff;
+   }
